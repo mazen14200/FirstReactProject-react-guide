@@ -1,0 +1,7 @@
+
+
+npm create vite@latest myTestApp -- --tempete react
+
+cd myTestApp
+npm install 
+npm run dev
