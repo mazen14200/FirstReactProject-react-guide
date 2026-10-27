@@ -1,20 +1,26 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import Button2 from './components/Button2'
-import ProductList from './components/ProductList'
-import ProductsProvider from './Context/ProductsContext'
+import * as ProductsContext from './Context/ProductsContext'
+import ProductList from './components/ProductList';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   // const productsState = useContext(ProductsContext);
 
   return (
     <>
-    <ProductsProvider>
+     <ProductsContext.SingleProductProvider id={3}>
+      <ProductList />
+    </ProductsContext.SingleProductProvider>
+    <p>gfg--------------gg </p>
+    <p>gf---------------gg </p>
+    <ProductsContext.ProductsProvider>
       <ProductList  />
+    </ProductsContext.ProductsProvider>
     <Button2 text="Click me111"/>
       <section id="center">
         <div className="hero">
@@ -117,7 +123,7 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-      </ProductsProvider>
+      
     </>
   )
 }
